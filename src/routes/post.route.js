@@ -5,6 +5,7 @@ const router = express.Router();
 const AWS = require('aws-sdk');
 const multerS3 = require('multer-s3');
 
+// S3
 const s3 = new AWS.S3({
     accessKeyId: process.env.AWS_ID,
     secretAccessKey: process.env.AWS_SECRET,
@@ -23,7 +24,7 @@ const storage = multerS3({
    acl: 'public-read',
    bucket: process.env.AWS_BUCKET,
    key: function (req, file, cb) {
-       cb(null, file.originalname); //use Date.now() for unique file keys
+       cb(null, 'post/' + file.originalname); //use Date.now() for unique file keys
    }
 })
 
