@@ -1,0 +1,12 @@
+name: Simple Continus Integration
+
+on:
+  push:
+    branches:
+      - "master"
+  workflow_call:
+
+jobs:
+  ci:
+    uses: ./.github/workflows/node.yml
+    secrets: inherit
