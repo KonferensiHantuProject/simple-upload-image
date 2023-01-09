@@ -1,0 +1,14 @@
+name: Pull Request Production
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+    branches:
+      - "master"
+
+jobs:
+  pr_build:
+    uses: ./.github/workflows/node.yaml
+    secrets: inherit
