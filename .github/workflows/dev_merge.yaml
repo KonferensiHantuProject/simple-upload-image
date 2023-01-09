@@ -8,5 +8,4 @@ on:
 jobs:
   dev_build:
     uses: ./.github/workflows/node.yaml
-    with: 
     secrets: inherit
