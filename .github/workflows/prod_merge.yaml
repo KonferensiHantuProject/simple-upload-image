@@ -6,6 +6,6 @@ on:
       - "master"
 
 jobs:
-  dev_build:
+  prod_build:
     uses: ./.github/workflows/prod_deploy.yaml
     secrets: inherit
